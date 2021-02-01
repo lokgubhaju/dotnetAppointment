@@ -1,0 +1,55 @@
+@model TerminDoc.Models.AppointmentViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-center mb-5">Details</h1>
+
+<div class="container">
+    <div class="details">
+        <div class="row">
+            <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.appointmentDate)
+            </dt>
+            <dd class = "col-sm-6">
+                @Html.DisplayFor(model => model.appointmentDate)
+            </dd>
+            <dt class = "col-sm-6">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class = "col-sm-6">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class = "col-sm-6">
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+            <dd class = "col-sm-6">
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+            <dt class = "col-sm-6">
+                @Html.DisplayNameFor(model => model.Age)
+            </dt>
+            <dd class = "col-sm-6">
+                @Html.DisplayFor(model => model.Age)
+            </dd>
+            <dt class = "col-sm-6">
+                @Html.DisplayNameFor(model => model.BloodGroup)
+            </dt>
+            <dd class = "col-sm-6">
+                @Html.DisplayFor(model => model.BloodGroup)
+            </dd>
+            <dt class = "col-sm-6">
+                @Html.DisplayNameFor(model => model.Gender)
+            </dt>
+            <dd class = "col-sm-6">
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+        </div>
+        <div class="text-center">
+            <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+            <a asp-action="Index"><i class="fas fa-arrow-left"></i> Back</a>
+        </div>
+    </div>
+</div>
+

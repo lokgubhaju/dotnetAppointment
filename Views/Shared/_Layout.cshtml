@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] | TerminDoc</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="~img/favicon/site.webmanifest">
+    <link rel="stylesheet" href="~/css/site.css" />
+    @RenderSection("Styles", false)
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="container d-flex justify-content-between">
+            <div class="logo"><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img
+                        src="~/img/logo.png" height="120" width="100" alt="">TerminDoc</a></div>
+            <ul class="d-flex justify-content-center align-items-center">
+                <li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i>Home</a></li>
+                <li><a class="nav-link" asp-area="" asp-controller="Appointment" asp-action="Index"><i class="far fa-calendar-check"></i>Appointment</a></li>
+                <li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Profile"><i class="fas fa-user-tie"></i>Profile</a></li>
+                <li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="About"><i class="fas fa-info-circle"></i>Holidays</a></li>
+                <partial name="_LoginPartial" />
+            </ul>
+
+        </div>
+    </nav>
+    @RenderBody()
+    <div class="menu">
+        
+    </div>
+    <footer class="text-center d-flex justify-content-center">
+        <p>copyright &copy; TerminDoc-2020</p>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js'></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

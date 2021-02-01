@@ -1,0 +1,68 @@
+@model IEnumerable<TerminDoc.Models.AppointmentViewModel>
+@{
+    ViewData["Title"] = "Appointment";
+}
+
+<h1 class="text-center mb-5">Appointment</h1>
+
+<p class="text-center">
+    <a asp-action="Create">Make an Appointment</a>
+</p>
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by Name: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index"><i class="fas fa-arrow-left"></i> Back</a>
+        </p>
+    </div>
+</form>
+<div class="table-responsive table-striped">
+    <table class="table" id="example">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]">@Html.DisplayNameFor(model => model.appointmentDate) <i class="fas fa-sort-alpha-down"></i></a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.Name) <i class="fas fa-sort-alpha-down"></i></a>
+                </th>
+                <th>@Html.DisplayNameFor(model => model.Address)</th>
+                <th>@Html.DisplayNameFor(model => model.Age)</th>
+                <th>@Html.DisplayNameFor(model => model.BloodGroup)</th>
+                
+                <th>@Html.DisplayNameFor(model => model.Gender)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.appointmentDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BloodGroup)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    <a asp-action="Edit" class="edit" asp-route-id="@item.id"><i class="far fa-edit"></i></a> |
+                    <a asp-action="Details" class="details" asp-route-id="@item.id"><i class="far fa-eye"></i></a> |
+                    <a asp-action="Delete" class="delete" asp-route-id="@item.id"><i class="fas fa-trash"></i></a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,222 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: url(../img/heart.jpg) center fixed;
+}
+
+body h1, body h2, body h3, body h4, body p {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+body, html {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  place-items: center;
+}
+
+.wrapper {
+  position: absolute;
+  overflow: hidden;
+  margin-left: 20%;
+  max-width: 390px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .title-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 200%;
+}
+
+.wrapper .title-text .title {
+  width: 50%;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  -webkit-transition: all 0.6s cubic-bezier(0.68, -0.55, 0.256, 1.55);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.256, 1.55);
+}
+
+.wrapper .form-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.wrapper .form-container .slide-controls {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+  margin: 30px 0 10px 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px solid lightgray;
+}
+
+.wrapper .form-container .slide-controls .slide {
+  height: 100%;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 48px;
+  cursor: pointer;
+  z-index: 1;
+  color: #fff;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+.wrapper .form-container .slide-controls .signup {
+  color: #000;
+}
+
+.wrapper .form-container .slide-controls input[type="radio"] {
+  display: none;
+}
+
+.wrapper .form-container .slide-controls #signup:checked ~ .slide-tab {
+  left: 50%;
+}
+
+.wrapper .form-container .slide-controls #signup:checked ~ .signup {
+  color: #fff;
+}
+
+.wrapper .form-container .slide-controls #signup:checked ~ .login {
+  color: #000;
+}
+
+.wrapper .form-container .slide-controls .slide-tab {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 0;
+  z-index: 0;
+  border-radius: 5px;
+  -webkit-transition: all 0.6s cubic-bezier(0.68, -0.55, 0.256, 1.55);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.256, 1.55);
+  background: -webkit-gradient(linear, left top, right top, from(#a445b2), to(#fa4299));
+  background: linear-gradient(left, #a445b2, #fa4299);
+}
+
+.wrapper .form-container .form-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 200%;
+}
+
+.wrapper .form-container .form-inner form {
+  width: 50%;
+  -webkit-transition: all 0.6s cubic-bezier(0.68, -0.55, 0.256, 1.55);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.256, 1.55);
+}
+
+.wrapper .form-container .form-inner form .field {
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.wrapper .form-container .form-inner form .field input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 15px;
+  font-size: 17px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  border-bottom-width: 2px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.wrapper .form-container .form-inner form .field input:focus {
+  border-color: #fc83bb;
+}
+
+.wrapper .form-container .form-inner form .field input:focus::-webkit-input-placeholder {
+  color: black;
+}
+
+.wrapper .form-container .form-inner form .field input:focus:-ms-input-placeholder {
+  color: black;
+}
+
+.wrapper .form-container .form-inner form .field input:focus::-ms-input-placeholder {
+  color: black;
+}
+
+.wrapper .form-container .form-inner form .field input:focus::placeholder {
+  color: black;
+}
+
+.wrapper .form-container .form-inner form .field input::-webkit-input-placeholder {
+  color: #999;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.wrapper .form-container .form-inner form .field input:-ms-input-placeholder {
+  color: #999;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.wrapper .form-container .form-inner form .field input::-ms-input-placeholder {
+  color: #999;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.wrapper .form-container .form-inner form .field input::placeholder {
+  color: #999;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.wrapper .form-container .form-inner form .field input[type="submit"] {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 0px;
+  background: -webkit-gradient(linear, left top, right top, from(#a445b2), to(#fa4299));
+  background: linear-gradient(left, #a445b2, #fa4299);
+}
+
+.wrapper .form-container .form-inner form .pass-link {
+  margin-top: 5px;
+}
+
+.wrapper .form-container .form-inner form .signup-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.wrapper .form-container .form-inner form .pass-link a, .wrapper .form-container .form-inner form .signup-link a {
+  color: #fa4299;
+  text-decoration: none;
+}
+
+.wrapper .form-container .form-inner form .pass-link a:hover, .wrapper .form-container .form-inner form .signup-link a:hover {
+  text-decoration: underline;
+}

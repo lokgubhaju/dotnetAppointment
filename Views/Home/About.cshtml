@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Public Holidays";
+    var hol = ViewBag.h;
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="table-responsive table-striped">
+    <table class="table" id="example">
+        <thead class="thead-dark">
+            <tr>
+                <th>Holiday Name</th>
+                <th>Holiday Date</th>
+                <th>Observed Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ho in hol) {
+                <tr>
+                    <td>@ho.Name</td>
+                    <td>@ho.Date</td>
+                    <td>@ho.Observed</td>
+                </tr>                
+            }
+        </tbody>
+    </table>
+</div>

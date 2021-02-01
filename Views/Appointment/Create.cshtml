@@ -1,0 +1,58 @@
+@model TerminDoc.Models.AppointmentViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center mb-5">Create</h1>
+
+<hr />
+<div class="container">
+    <form asp-action="Create" class="create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="appointmentDate" class="control-label">Choose a Date & Time</label>
+            <input asp-for="appointmentDate" class="form-control" />
+            <span asp-validation-for="appointmentDate" class="text-danger">Appointment Date</span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Name" class="control-label">Name</label>
+            <input asp-for="Name" class="form-control" type="text" placeholder="Full Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Address" class="control-label">Address</label>
+            <input asp-for="Address" class="form-control" />
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Age" class="control-label">Age</label>
+            <input asp-for="Age" class="form-control" />
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="BloodGroup" class="control-label">Blood Group</label>
+            <input asp-for="BloodGroup" class="form-control" />
+            <span asp-validation-for="BloodGroup" class="text-danger"></span>
+            
+        </div>
+        <div class="form-group">
+            <label asp-for="Gender" class="control-label">Gender</label>
+            <input asp-for="Gender" class="form-control" />
+            <span asp-validation-for="Gender" class="text-danger"></span>
+            
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+            <input type="reset" value="Reset" class="btn btn-danger" />
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index" class="text-center">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
